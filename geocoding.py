@@ -4,12 +4,13 @@ local=input('digite o cidade que quer ver a temperatura.')
 
 # 1. URL de busca (Geocoding)
 # Note que mudou de "api.open-meteo" para "geocoding-api.open-meteo"
-url = ("https://geocoding-api.open-meteo.com/v1/search?name="+local)
+Localizador = ("https://geocoding-api.open-meteo.com/v1/search?name="+local)
 
 # 2. Faz a chamada
-resposta = requests.get(url)
+Dados_Localização = requests.get(Localizador)
 
-print (resposta)
-
+dados=Dados_Localização.json()
+lat=dados['results'][0]['latitude']
+lon=dados['results'][0]['longitude']
 # 3. Mostra o resultado bruto
-print(resposta.json())
+#print(resposta.json())
