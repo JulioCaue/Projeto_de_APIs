@@ -10,10 +10,10 @@ lat=dados['results'][0]['latitude']
 lon=dados['results'][0]['longitude']
 
 # 1. Definir para onde vamos ligar (URL)
-url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
+Pegar_Temperatura = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
 
 # 2. Fazer a chamada (GET)
-resposta = requests.get(url)
+resposta = requests.get(Pegar_Temperatura)
 
 # 3. Ver se funcionou (200 = OK)
 if resposta.status_code == 200:
