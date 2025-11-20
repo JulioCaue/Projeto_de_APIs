@@ -9,9 +9,7 @@ url = ("https://geocoding-api.open-meteo.com/v1/search?name="+local)
 # 2. Faz a chamada
 resposta = requests.get(url)
 
-dados_localização=resposta.json()
-localização=dados_localização["'"+local+"'"]['latitude']['longitude']['elevation']
-print (localização)
+print (resposta)
 
 # 3. Mostra o resultado bruto
 print(resposta.json())
